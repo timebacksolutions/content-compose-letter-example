@@ -1,0 +1,11 @@
+uid: SR-0005
+type: system_requirement
+status: approved
+title: Write the letter in full, uncontracted forms
+text: 'The letter writes "do not", "cannot" and "you will" in full rather than the
+  contracted forms, so it reads in the council''s formal register.'
+links:
+- target: UR-0001
+  type: implements
+- target: "tone:SR-0001"
+  type: satisfies

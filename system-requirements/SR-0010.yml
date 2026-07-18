@@ -1,0 +1,14 @@
+uid: SR-0010
+type: system_requirement
+status: approved
+title: Tell the tenant what to do if they cannot pay or the amount looks wrong
+text: 'The letter tells the tenant, before it asks them to pay, what to do if they
+  cannot pay the full amount by the date or if the amount owed does not look right, so
+  they can get help rather than stall.'
+links:
+- target: UR-0001
+  type: implements
+- target: "purpose:SR-0007"
+  type: satisfies
+- target: "purpose:SR-0010"
+  type: satisfies

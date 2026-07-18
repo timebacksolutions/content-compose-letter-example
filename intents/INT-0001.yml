@@ -1,0 +1,17 @@
+uid: INT-0001
+type: intent
+status: approved
+title: A tenant can read and act on a rent-arrears letter
+text: 'The council posts a letter to a tenant who has fallen into rent arrears,
+  telling them how much is owed and how to pay or get help. A tenant must be able to
+  understand it on first reading, the letter must follow the council''s British-English
+  house style, it must read in the council''s formal register, it must do its job of
+  instructing the tenant, and it must be pitched at a lay reader with no housing-finance
+  knowledge. Because it is posted rather than published on the web, it must also be
+  shaped for the letter channel — framed by an address block and salutation, closed with
+  a sign-off, self-contained with nothing to click, and readable on a plain printed
+  page. Being readable, being correctly styled, being in the right register, serving the
+  right purpose, being pitched at the right reader and being shaped for the channel are
+  independent goals, so the letter adopts a readability standard, a conventions standard,
+  a tone standard, a purpose standard, an audience standard and a medium standard.'
+normative: false

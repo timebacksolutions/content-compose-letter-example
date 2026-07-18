@@ -1,0 +1,17 @@
+uid: SR-0004
+type: system_requirement
+status: approved
+title: Show amounts and dates in GOV.UK style
+text: 'Amounts use the £ symbol and numerals, and dates use the GOV.UK format, for
+  example "pay £318.60 by 1 August 2026".'
+links:
+- target: UR-0001
+  type: implements
+- target: "conventions:SR-0011"
+  type: satisfies
+- target: "conventions:SR-0012"
+  type: satisfies
+- target: "conventions:SR-0018"
+  type: satisfies
+- target: "conventions:SR-0019"
+  type: satisfies

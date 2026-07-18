@@ -1,0 +1,13 @@
+uid: SR-0006
+type: system_requirement
+status: approved
+title: Explain arrears in everyday words
+text: 'The letter explains "arrears" and any other housing term in everyday words the
+  first time it appears, so a tenant with no housing-finance knowledge can follow it.'
+links:
+- target: UR-0001
+  type: implements
+- target: "plain:SR-0008"
+  type: satisfies
+- target: "audience:SR-0003"
+  type: satisfies

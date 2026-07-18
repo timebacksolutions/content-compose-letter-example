@@ -1,0 +1,24 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      # From PyPI, so the job needs no credentials for the (private) compose repo.
+      - name: Install throughline-compose
+        run: pip install throughline-compose
+
+      - name: Composition gate (the composed graph must stay sound)
+        run: tl-compose check --strict

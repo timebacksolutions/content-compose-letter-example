@@ -1,0 +1,10 @@
+uid: UR-0001
+type: user_requirement
+status: approved
+title: Send a rent-arrears letter a tenant can read and act on
+text: 'Post a letter that a tenant can read straight through, understand and use to pay
+  what they owe or get help in time, written to the council house style and shaped for a
+  posted letter.'
+links:
+- target: INT-0001
+  type: derives_from

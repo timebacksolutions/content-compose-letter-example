@@ -1,0 +1,12 @@
+uid: SR-0008
+type: system_requirement
+status: approved
+title: Write the payment details and reference out in full
+text: 'Because there is nothing to click, the letter writes the payment telephone
+  number, the office address and the rent account reference out in full for the tenant
+  to use.'
+links:
+- target: UR-0001
+  type: implements
+- target: "medium:SR-0005"
+  type: satisfies

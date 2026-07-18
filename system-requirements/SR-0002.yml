@@ -1,0 +1,13 @@
+uid: SR-0002
+type: system_requirement
+status: approved
+title: Frame the letter with an address block and a formal salutation
+text: 'The letter opens with the sender and recipient address blocks, the date, a rent
+  account reference and a formal salutation such as "Dear Ms Okafor".'
+links:
+- target: UR-0001
+  type: implements
+- target: "medium:SR-0007"
+  type: satisfies
+- target: "tone:SR-0003"
+  type: satisfies

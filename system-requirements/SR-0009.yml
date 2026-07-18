@@ -1,0 +1,16 @@
+uid: SR-0009
+type: system_requirement
+status: approved
+title: Keep the letter short, linear and self-contained
+text: 'The letter is kept as short as the message allows, reads straight through without
+  asking the tenant to jump between sections, and holds everything they need to act
+  without looking anything up.'
+links:
+- target: UR-0001
+  type: implements
+- target: "medium:SR-0002"
+  type: satisfies
+- target: "medium:SR-0003"
+  type: satisfies
+- target: "medium:SR-0004"
+  type: satisfies

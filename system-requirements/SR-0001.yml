@@ -1,0 +1,13 @@
+uid: SR-0001
+type: system_requirement
+status: approved
+title: Open with the reason for writing and the amount owed
+text: 'The letter opens by saying why the council is writing and how much rent is owed,
+  before any background about how the arrears built up.'
+links:
+- target: UR-0001
+  type: implements
+- target: "plain:SR-0004"
+  type: satisfies
+- target: "medium:SR-0001"
+  type: satisfies

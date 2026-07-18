@@ -1,0 +1,13 @@
+uid: SR-0011
+type: system_requirement
+status: approved
+title: Present the letter for a plain printed page
+text: 'The letter still reads if printed in black and white, and keeps formatting
+  restrained — no reliance on colour, and no on-screen devices the paper cannot show.'
+links:
+- target: UR-0001
+  type: implements
+- target: "medium:SR-0009"
+  type: satisfies
+- target: "medium:SR-0010"
+  type: satisfies

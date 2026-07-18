@@ -1,0 +1,13 @@
+uid: SR-0007
+type: system_requirement
+status: approved
+title: State plainly what the tenant must do and by when
+text: 'The letter states plainly the action the tenant must take and the date to take
+  it by, and gives the ways to pay in the order the council prefers them.'
+links:
+- target: UR-0001
+  type: implements
+- target: "medium:SR-0006"
+  type: satisfies
+- target: "purpose:SR-0005"
+  type: satisfies

@@ -1,0 +1,112 @@
+[project]
+name = "Rent-arrears letter (content-compose example)"
+format_version = 2
+
+# The sibling of content-compose-example. That project is a rent-statement help *web
+# page*; this one is a rent-arrears *letter* posted to a tenant. Both are ordinary
+# throughline projects — their own intent, user requirements and system requirements
+# live under intents/, user-requirements/ and system-requirements/ — that adopt SIX
+# orthogonal content standards by reference and cite their clauses on the system
+# requirements they satisfy:
+#   - Plain-language (readability)        namespace `plain`
+#   - British-English conventions         namespace `conventions`
+#   - Tone — formal register              namespace `tone`
+#   - Purpose — instruct                  namespace `purpose`
+#   - Audience — general reader           namespace `audience`
+#   - Medium — letter                     namespace `medium`
+#
+# This is the sibling-swap payoff. Compare this file with content-compose-example's:
+# FIVE of the six sources are IDENTICAL — same url, same ref — because the council still
+# wants the message readable AND correctly styled AND in the formal register AND doing
+# the instruct job AND pitched at a lay tenant. Only ONE axis differs: the medium. The
+# web page composes `throughline-medium-web`; this letter composes
+# `throughline-medium-letter`. Everything the channel imposes changes — the letter opens
+# with an address block and a salutation, closes with a sign-off, writes addresses and
+# references out in full because there is nothing to click, and is a single linear read
+# rather than a scannable page — while readability, conventions, register, purpose and
+# audience are held constant. Swapping a channel is a one-line `url` change here.
+#
+# Note the seam between two axes at the sign-off. That the letter HAS a sign-off is a
+# `medium` decision (`medium:SR-0008`); that the sign-off reads "Yours sincerely" rather
+# than "Cheers" is a `tone` decision (`tone:SR-0011`). SR-0003 cites both, side by side.
+#
+# Drive this project with `tl-compose`, never bare `tl`: the composition-aware `check`
+# merges the sources into one union graph and validates it. Bare `tl` fails fast the
+# moment it meets a namespace-qualified reference it cannot resolve.
+#
+# Each source is adopted BY REFERENCE — a git `url` pinned to an edition `ref` — never
+# vendored or copied. tl-compose fetches the pinned ref into a per-user cache outside
+# this project, so this project's own item scan never sees the borrowed graphs.
+[[sources]]
+namespace = "plain"
+url = "https://github.com/timebacksolutions/throughline-plain-language"
+ref = "v2026-07"
+
+[[sources]]
+namespace = "conventions"
+url = "https://github.com/timebacksolutions/throughline-conventions-uk"
+ref = "v2026-07"
+
+[[sources]]
+namespace = "tone"
+url = "https://github.com/timebacksolutions/throughline-tone-formal"
+ref = "v2026-07"
+
+[[sources]]
+namespace = "purpose"
+url = "https://github.com/timebacksolutions/throughline-purpose-instruct"
+ref = "v2026-07"
+
+[[sources]]
+namespace = "audience"
+url = "https://github.com/timebacksolutions/throughline-audience-general"
+ref = "v2026-07"
+
+[[sources]]
+namespace = "medium"
+url = "https://github.com/timebacksolutions/throughline-medium-letter"
+ref = "v2026-07"
+
+[grounding]
+root_types = ["intent"]
+delivery_roots = ["intent"]
+ground_link_types = ["derives_from", "implements"]
+ai_origins = ["ai", "hybrid"]
+
+# The union is governed by THIS schema, so the consumer must declare types, links and
+# statuses that are a superset of what every source uses internally. All six sources
+# mark source_ref required and carry a `principle` grouping attr on their rules; here
+# those are optional, which still accepts the sources' items while not forcing this
+# project's own items to carry them.
+[types.user_requirement]
+attrs.source_ref = { required = false }
+
+[types.system_requirement]
+attrs.source_ref = { required = false }
+attrs.principle  = { required = false }
+
+[links]
+types = ["derives_from", "implements", "satisfies", "relates"]
+
+[link_rules]
+derives_from = { from = ["user_requirement"], to = ["intent"] }
+implements   = { from = ["system_requirement"], to = ["user_requirement"] }
+# The borrowed-clause link: a letter requirement satisfies a plain-language,
+# conventions, tone, purpose, audience or medium rule. `satisfies` is a traceability
+# link, not a grounding link, so a letter SR still grounds through `implements`.
+satisfies    = { from = ["system_requirement"], to = ["system_requirement"] }
+
+[status]
+values = ["proposed", "draft", "deferred", "approved", "ratified", "implemented",
+          "verified", "suspect", "rejected", "deleted"]
+
+[transitions]
+proposed    = ["draft", "approved", "ratified", "deferred", "rejected", "deleted"]
+draft       = ["approved", "deferred", "rejected", "deleted"]
+deferred    = ["draft", "approved", "rejected", "deleted"]
+approved    = ["ratified", "implemented", "deferred", "suspect", "rejected", "deleted"]
+ratified    = ["implemented", "suspect", "rejected", "deleted"]
+implemented = ["verified", "suspect", "rejected", "deleted"]
+verified    = ["implemented", "suspect", "deleted"]
+suspect     = ["approved", "ratified", "implemented", "verified", "rejected", "deleted"]
+rejected    = ["draft", "deleted"]

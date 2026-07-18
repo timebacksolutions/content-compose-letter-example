@@ -1,0 +1,14 @@
+uid: SR-0003
+type: system_requirement
+status: approved
+title: Close with a formal sign-off and the sender's name and role
+text: 'The letter closes with a sign-off followed by the sender''s name and role. That
+  a sign-off exists is a letter-channel decision; that it reads "Yours sincerely" rather
+  than a casual close is a formal-register decision.'
+links:
+- target: UR-0001
+  type: implements
+- target: "medium:SR-0008"
+  type: satisfies
+- target: "tone:SR-0011"
+  type: satisfies
