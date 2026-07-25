@@ -1,6 +1,6 @@
 [project]
 name = "Rent-arrears letter (content-compose example)"
-format_version = 2
+format_version = 3
 
 # The sibling of content-compose-example. That project is a rent-statement help *web
 # page*; this one is a rent-arrears *letter* posted to a tenant. Both are ordinary
@@ -110,3 +110,14 @@ implemented = ["verified", "suspect", "rejected", "deleted"]
 verified    = ["implemented", "suspect", "deleted"]
 suspect     = ["approved", "ratified", "implemented", "verified", "rejected", "deleted"]
 rejected    = ["draft", "deleted"]
+
+# Semantic status roles (SR-0131): which declared status
+# plays each role the tool's operations act on. Backfilled by
+# `tl migrate`; edit to match your own status vocabulary.
+[status.roles]
+initial = "draft"
+proposed = "proposed"
+ratified = "ratified"
+invalidated = "rejected"
+suspect = "suspect"
+tombstone = "deleted"
