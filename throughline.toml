@@ -39,32 +39,32 @@ format_version = 2
 # this project, so this project's own item scan never sees the borrowed graphs.
 [[sources]]
 namespace = "plain"
-url = "https://github.com/timebacksolutions/throughline-plain-language"
+url = "https://github.com/rhodium-org/throughline-plain-language"
 ref = "v2026-07"
 
 [[sources]]
 namespace = "conventions"
-url = "https://github.com/timebacksolutions/throughline-conventions-uk"
+url = "https://github.com/rhodium-org/throughline-conventions-uk"
 ref = "v2026-07"
 
 [[sources]]
 namespace = "tone"
-url = "https://github.com/timebacksolutions/throughline-tone-formal"
+url = "https://github.com/rhodium-org/throughline-tone-formal"
 ref = "v2026-07"
 
 [[sources]]
 namespace = "purpose"
-url = "https://github.com/timebacksolutions/throughline-purpose-instruct"
+url = "https://github.com/rhodium-org/throughline-purpose-instruct"
 ref = "v2026-07"
 
 [[sources]]
 namespace = "audience"
-url = "https://github.com/timebacksolutions/throughline-audience-general"
+url = "https://github.com/rhodium-org/throughline-audience-general"
 ref = "v2026-07"
 
 [[sources]]
 namespace = "medium"
-url = "https://github.com/timebacksolutions/throughline-medium-letter"
+url = "https://github.com/rhodium-org/throughline-medium-letter"
 ref = "v2026-07"
 
 [grounding]
